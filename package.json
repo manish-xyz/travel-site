@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "lodash": "^4.17.21"
+    
+  },
+  "name": "travel-site",
+  "version": "1.0.0",
+  "description": "a travel website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manish-xyz/travel-site.git"
+  },
+  "author": "manish-xyz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manish-xyz/travel-site/issues"
+  },
+  "homepage": "https://github.com/manish-xyz/travel-site#readme"
+}
