@@ -8,15 +8,19 @@ const postCssPlugins = [
 module.exports = {
     entry: './app/assets/scripts/App.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'bundled.js',
         path: path.resolve(__dirname, 'app'),
     },
+    devServer: {
+        contentBase: path.join(__dirname, 'app'),
+        hot: true,
+        port: 3000,
+    },
     mode: 'development',
-    watch: true,
     module: {
         rules: [{
             test: /\.css$/i,
-            use: ['style-loader','css-loader?url=false', {loader: 'postcss-loader', options: {postcssOptions: {plugins: [postCssPlugins]}}}],
+            use: ['style-loader','css-loader?url=false', {loader: 'postcss-loader', options: {postcssOptions: {plugins: postCssPlugins}}}],
         }]
-    }
+    },
 }
