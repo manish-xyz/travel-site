@@ -1,3 +1,4 @@
+const { Server } = require('http');
 const path = require('path');
 const postCssPlugins = [
     require('postcss-import'),
@@ -13,9 +14,13 @@ module.exports = {
         path: path.resolve(__dirname, 'app'),
     },
     devServer: {
+        before: function(req, res) {
+            res._watch('./app/**/*.html')
+        },
         contentBase: path.join(__dirname, 'app'),
         hot: true,
         port: 3000,
+        host: '0.0.0.0',
     },
     mode: 'development',
     module: {
